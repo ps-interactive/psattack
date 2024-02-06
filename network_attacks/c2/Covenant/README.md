@@ -1,6 +1,6 @@
 # Covenant C2
 
-Covenant C2 Command and Cotrol Traffic from 192.168.39.130 (agent) to 140.82.113.4 (Covenant Server) on Port 443
+Covenant C2 Command and Control Traffic from 192.168.39.130 (agent) to 140.82.113.4 (Covenant Server) on Port 443
 
 TLS 1.3 Encrypted communication.
 
