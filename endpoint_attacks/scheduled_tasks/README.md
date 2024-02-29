@@ -1,3 +1,3 @@
-# Scheduled Tasks Workshop Instructions
+# Scheduled Tasks 
 
-Schedule task created via a command line.
+Scheduled task created by PowerShell.
