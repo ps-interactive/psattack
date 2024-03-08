@@ -1,6 +1,6 @@
 <# Build Domain Admin Credentials#>
-$domainUser="globomantics\Administrator"
-$domainPass = "12qwaszx!@QWASZX"
+$domainUser="globomantics\ralthor"
+$domainPass = "JustAn0therG!ng3r"
 $secDomainPass = ConvertTo-SecureString $domainPass -AsPlainText -Force
 $domainAdminCredential = New-Object System.Management.Automation.PSCredential($domainUser, $secDomainPass)
 
